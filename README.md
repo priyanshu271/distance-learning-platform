@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Additional-side notes:
+Unable to completely cover all functionalities(like swapping and draggable rows.
+Mobile view has issues, not as per the VD, due to time constraints.
+Done in Angular 15, since I have no prior experience in angularJS,but wanted to showcase by dev abilities.
