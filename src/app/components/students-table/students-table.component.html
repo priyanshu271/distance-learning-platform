@@ -1,0 +1,47 @@
+ <!--Logo section-->
+ <div class="your-logo">
+    <span>your</span><span>logo</span>
+</div>
+<div class="dummy-text"><p>Lorem ipsum this is a dummy text</p></div>
+<button class="delete-button" [ngClass]="{ 'enabled': selectedRows.length > 0 }" (click)="openConfirmation()" [disabled]="selectedRows.length === 0">Delete</button>
+<div class="table">
+  <div class="table-row header">
+    <div class="table-cell checkbox-cell"></div>
+    <div class="table-cell" (click)="sortData('username')">
+      User Name
+      <i class="fas fa-sort" [ngClass]="{ 'asc': sortBy === 'username' && sortDirection === 'asc', 'desc': sortBy === 'username' && sortDirection === 'desc' }"></i>
+    </div>
+    <div class="table-cell" (click)="sortData('phone_number')">
+      Phone Number
+      <i class="fas fa-sort" [ngClass]="{ 'asc': sortBy === 'phone_number' && sortDirection === 'asc', 'desc': sortBy === 'phone_number' && sortDirection === 'desc' }"></i>
+    </div>
+    <div class="table-cell" (click)="sortData('email')">
+      Email ID
+      <i class="fas fa-sort" [ngClass]="{ 'asc': sortBy === 'email' && sortDirection === 'asc', 'desc': sortBy === 'email' && sortDirection === 'desc' }"></i>
+    </div>
+    <div class="table-cell">Options</div>
+  </div>
+  <ng-container *ngFor="let student of studentsInfo; let i = index">
+    <div class="table-row">
+      <div class="table-cell checkbox-cell">
+        <input type="checkbox" (change)="toggleSelected(student, $event)" />
+      </div>
+      <div class="table-cell">{{ student.username }}</div>
+      <div class="table-cell">{{ student.phone_number }}</div>
+      <div class="table-cell">{{ student.email }}</div>
+      <div class="options"> 
+        <button (click)="deleteRow(i)">Delete</button>
+        <button>Reorder</button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<div class="confirmation-popup" *ngIf="showConfirmation">
+    <p>Are you sure you want to delete?</p>
+    <div class="buttons">
+        <div class="vertical-bar"></div>
+      <button class="yes-button" (click)="deleteSelected()">Yes</button>
+      
+      <button class="cancel-button" (click)="closeConfirmation()">Cancel</button>
+    </div>
+</div>

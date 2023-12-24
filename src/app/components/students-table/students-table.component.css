@@ -1,0 +1,190 @@
+/* table styles */
+.table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    text-align: left;
+    white-space: nowrap;
+    width: 240px;
+}
+
+.table-cell:last-child {
+    border-right: none;
+}
+
+.checkbox-cell {
+    flex: 0.5;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+}
+
+.header {
+    font-weight:100 ;
+}
+
+.table-cell.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-cell.options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 5px;
+}
+
+.checkbox-cell {
+    flex: 0.2;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+}
+
+.dummy-text {
+    width: 100px;
+    height: 20px;
+}
+
+.delete-button {
+    float: right;
+    margin-bottom: 10px;
+    background-color: #e9a49a;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.delete-button.enabled {
+    background-color: #d94e3b;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-popup .buttons {
+    display: flex;
+    align-items: center;
+}
+
+.confirmation-popup .vertical-bar {
+    height: 30px;
+    border-left: 1px solid orange;
+    margin-right: 15px;
+}
+
+.confirmation-popup .buttons button {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.confirmation-popup .yes-button {
+    background-color: #d94e3b;
+    color: white;
+}
+
+.confirmation-popup .cancel-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.fa-sort {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.asc::before {
+    content: '\25b2';
+}
+
+.desc::before {
+    content: '\25bc';
+}
+.dummy-text p{
+    display: flex;
+    text-wrap: nowrap;
+    margin-top: 80px;
+  }
+  .your-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: Open Sans;
+    gap: 5px;
+    margin-bottom: 40px;
+    float:left;
+    box-shadow: 5px 10px #f0f0f0;
+}
+
+.your-logo span:last-child {
+    color: #d94f3d;
+}
+
+.your-logo span:first-child {
+    color: #545557;
+}
+
+/* Your existing CSS */
+
+@media screen and (max-width: 768px) {
+    .table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    .table-row {
+      white-space: nowrap;
+    }
+  
+    .table-cell {
+      border-bottom: 1px solid #ccc;
+     max-width: 20px;
+      display: inline-block; 
+      vertical-align: top; 
+    }
+
+  }
+  
+  
+  

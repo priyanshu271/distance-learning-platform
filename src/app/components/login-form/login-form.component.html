@@ -1,0 +1,58 @@
+<div class="main">
+    <div class="container">
+        <!-- Information section -->
+        <div class="info-section">
+            <p><span>Digital</span><span class="space"></span> <span>Platform<br> for distance
+                </span><span>learning</span>
+            </p>
+            <p class="desc">Internet and online based digital technologies such as desktop computers,mobile phones and
+                others</p>
+        </div>
+        <!-- Login section -->
+        <div class="login-section">
+            <!--Logo section-->
+            <div class="your-logo">
+                <span>your</span><span>logo</span>
+            </div>
+            <div class="secure-logo">
+                <div class="secure-bg">
+                </div>
+                <img src="../../../assets/icons/padlock.png">
+            </div>
+
+            <h2>Welcome back</h2>
+            <div class="login-content">
+                <form [formGroup]="loginForm" class="login-form">
+                    <div class="login-fields">
+                        <div class="input-group">
+                            <span class="icon">
+                                <img src="../../../assets/icons/user_6492022.png" alt="User Icon">
+                            </span>
+                            <input type="text" placeholder="Username" formControlName="username"
+                                [ngClass]="formSubmit && loginForm.get('username')?.hasError('required') ? 'isError':''">
+                        </div>
+                        <div class="input-group">
+                            <span class="icon">
+                                <img src="../../../assets/icons/padlock.png" alt="Password Icon">
+                            </span>
+                            <input type="password" placeholder="Password" formControlName="password" minlength="8"
+                                [ngClass]="{
+                                    'isError': formSubmit && loginForm.get('password')?.hasError('required') || passErrorFlag,
+                                    'isValid': isValid
+                                }">
+                        </div>
+                        <div *ngIf="passErrorFlag" class="pass-err">{{ passwordErrMsg }}</div>
+                        <div *ngIf="formSubmit && loginForm.get('password')?.hasError('required')" class="input-err">
+                            Password cannot be empty.
+                        </div>
+                    </div>
+                    <span class="forgot-pass">Forgot Password?</span>
+                    <button type="submit" class="login" (click)="onSubmit()">Login</button>
+                </form>
+                <div class="sign-up">
+                    <span>Don't Have an account?</span><span> Sign up</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
